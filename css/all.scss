@@ -1,0 +1,312 @@
+//sass --watch css:css
+@import "_lib.scss";
+
+$blue:#6591B7;
+$lightblue:#7CB1DE;
+
+html{
+	background:#212E3F;
+	color:#fff;
+}
+
+body{
+	max-width:1030px;
+	margin:0 auto;
+}
+
+section{
+	position:relative;
+}
+
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+
+.feedback{
+	background:#2A3A50;
+	color:#fff;
+	font-weight: bold;
+	position:absolute;
+	right:0;
+	top:0;
+	padding:29px 14px;
+}
+
+.status{
+	margin:0 0 9px;
+
+	img{
+		width: 24px;
+		height: 24px;
+		position: relative;
+		top:8px;
+		display: inline-block;
+	}
+	.play{
+		background:#C7DAF3;
+		color:#2A3A50;
+		display: inline-block;
+		line-height: 0;
+		@include roundcorner(5px,5px,5px,5px);
+		position: relative;
+		top:4px;
+		transform:0.5 color;
+
+		&:hover{
+			background:$lightblue;
+		}
+
+		span{
+			font-size:16px;
+			display: inline-block;
+		}
+	}
+
+	.broadcasting{
+		display: inline-block;
+	}
+	.broadcasting-status{
+		background:#FF595E;
+		@include roundcorner(3px,3px,3px,3px);
+		color:#fff;
+		font-weight:bold;
+		padding:2px 3px;
+		font-size:11px;
+		margin:0 5px;
+	}
+	.time{
+		font-weight:bold;
+		color:$blue;
+		padding:1px 0;
+		position: relative;
+		top:1px;
+	}
+}
+
+.match{
+	@include inlineblock;
+	width:30%;
+
+	.match-title{
+		p{
+			margin:0 0 0px;
+		}
+		strong{
+			color:$blue;
+		}
+	}
+}
+
+.events{
+	@include inlineblock;
+
+	width:63%;
+}
+
+.events-container{
+	display: grid;
+	grid-template-columns: 40% 20% 40%;
+}
+
+.team{
+	display: inline-grid;
+	margin:10px 5px 5px;
+	border:1px solid $lightblue;
+	padding:10px;
+	background:#263447;
+
+	@include roundcorner(3px,3px,3px,3px);
+
+	img{
+		width:32px;
+		height: 32px;
+	}
+
+	.data{
+
+		strong{
+			display: block;
+			font-size:17px;
+		}
+		span{
+			display: block;
+		}
+
+		&.right{
+			text-align: right;
+		}
+	}
+}
+
+.results{
+	display: inline-grid;
+	text-align: center;
+	padding:20px 0;
+
+
+	li{
+		@include inlineblock;
+		font-size:22px;
+		padding: 11px 8px 0px;
+
+		strong{
+			color:$lightblue;
+			font-size:18px;
+		}
+	}
+}
+
+#footer{
+	position: absolute;
+	bottom:0;
+}
+
+
+@media only screen and (max-width: 734px) {
+	.match{
+		width:100%;
+		display: block;
+
+
+		.status{
+			margin:0 10px 9px;
+			font-size:9px;
+
+			.broadcasting-status{
+				float: right;
+				margin:13px 35px 0 5px;
+				padding:0px 3px;
+			}	
+			a{
+				float:right;
+				margin:10px 0 0;
+			}
+			.time{
+				border-right:1px solid $lightblue;
+				padding-right:5px;
+			}
+		}
+
+		.match-title{
+			display: inline-block;
+			margin:0px 0 0 70px;
+			position: relative;
+			bottom: 26px;
+
+			strong{
+				float: left;
+				font-size:12px;
+			}
+			p{
+				float: right;
+				margin-left: 5px;
+				font-size:12px;
+			}
+		}
+	}
+	.events{
+		width:100%;
+		display: block;
+	}
+
+	.feedback{
+		padding: 66px 5px 67px;
+	}
+
+	.results{
+		position: relative;
+		padding:0;
+
+		li{
+			padding:10px 14%;
+			border:1px solid #3C5377;
+			@include roundcorner(3px,3px,3px,3px);
+
+			strong{
+				color:#fff;
+				background:#304366;
+				display: block;
+				margin:-11px;
+				padding:3px 5px 1px;
+				@include roundcorner(3px,3px,3px,3px);
+				font-size:10px;
+			}
+			&.versus{
+				position: absolute;
+				top:7px;
+				padding:10px;
+				right:50%;
+				z-index: 999;
+				margin:0 -10px 0 0;
+			}
+		}
+	}
+	.events-container{
+		margin-right:40px;
+		grid-template-columns:33% 33% 33%;
+	}
+
+	.team{
+		border:0;
+		background:transparent;
+		margin:-20px 0 0;
+
+		img{
+			float: none;
+			display: block;
+			text-align: center;
+			margin: 0 0 5px -18px;
+			left:50%;
+			position: absolute;
+			top:0;
+		}
+		.data{
+			float: none;
+			text-align: center;
+			&.right{
+				text-align: center;
+			}
+
+			.value{
+				bottom:0 ;
+				left: 50%;
+				margin-left:-30px;
+				margin-bottom: -34px;
+				border:1px solid $lightblue;
+				@include roundcorner(3px,3px,3px,3px);
+				position: absolute;
+				font-size:14px;
+				padding:2px 15px;
+			}
+			span{
+				position: absolute;
+				top:36px;
+				left:50%;
+				margin-left:-38px;
+				font-size:12px;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

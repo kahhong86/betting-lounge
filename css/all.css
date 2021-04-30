@@ -1,0 +1,356 @@
+/*
+@font-face {
+    font-family: *font-family;
+    src: url(../fonts/**);
+}*/
+body {
+  font-family: "Oxanium", Arial;
+  font-size: 13px;
+  line-height: 150%;
+  margin: 0;
+  color: #fff;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  line-height: 150%;
+  margin: 0 0 10px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clr {
+  clear: both;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 100%;
+  font-family: Arial;
+  font-weight: 700;
+}
+
+figure {
+  margin: 0;
+}
+
+html {
+  background: #212E3F;
+  color: #fff;
+}
+
+body {
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+section {
+  position: relative;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.feedback {
+  background: #2A3A50;
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 29px 14px;
+}
+
+.status {
+  margin: 0 0 9px;
+}
+.status img {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: 8px;
+  display: inline-block;
+}
+.status .play {
+  background: #C7DAF3;
+  color: #2A3A50;
+  display: inline-block;
+  line-height: 0;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  behavior: url(../js/PIE.htc);
+  position: relative;
+  position: relative;
+  top: 4px;
+  transform: 0.5 color;
+}
+.status .play:hover {
+  background: #7CB1DE;
+}
+.status .play span {
+  font-size: 16px;
+  display: inline-block;
+}
+.status .broadcasting {
+  display: inline-block;
+}
+.status .broadcasting-status {
+  background: #FF595E;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  behavior: url(../js/PIE.htc);
+  position: relative;
+  color: #fff;
+  font-weight: bold;
+  padding: 2px 3px;
+  font-size: 11px;
+  margin: 0 5px;
+}
+.status .time {
+  font-weight: bold;
+  color: #6591B7;
+  padding: 1px 0;
+  position: relative;
+  top: 1px;
+}
+
+.match {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
+  width: 30%;
+}
+.match .match-title p {
+  margin: 0 0 0px;
+}
+.match .match-title strong {
+  color: #6591B7;
+}
+
+.events {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
+  width: 63%;
+}
+
+.events-container {
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+}
+
+.team {
+  display: inline-grid;
+  margin: 10px 5px 5px;
+  border: 1px solid #7CB1DE;
+  padding: 10px;
+  background: #263447;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  behavior: url(../js/PIE.htc);
+  position: relative;
+}
+.team img {
+  width: 32px;
+  height: 32px;
+}
+.team .data strong {
+  display: block;
+  font-size: 17px;
+}
+.team .data span {
+  display: block;
+}
+.team .data.right {
+  text-align: right;
+}
+
+.results {
+  display: inline-grid;
+  text-align: center;
+  padding: 20px 0;
+}
+.results li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
+  font-size: 22px;
+  padding: 11px 8px 0px;
+}
+.results li strong {
+  color: #7CB1DE;
+  font-size: 18px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+}
+
+@media only screen and (max-width: 734px) {
+  .match {
+    width: 100%;
+    display: block;
+  }
+  .match .status {
+    margin: 0 10px 9px;
+    font-size: 9px;
+  }
+  .match .status .broadcasting-status {
+    float: right;
+    margin: 13px 35px 0 5px;
+    padding: 0px 3px;
+  }
+  .match .status a {
+    float: right;
+    margin: 10px 0 0;
+  }
+  .match .status .time {
+    border-right: 1px solid #7CB1DE;
+    padding-right: 5px;
+  }
+  .match .match-title {
+    display: inline-block;
+    margin: 0px 0 0 70px;
+    position: relative;
+    bottom: 26px;
+  }
+  .match .match-title strong {
+    float: left;
+    font-size: 12px;
+  }
+  .match .match-title p {
+    float: right;
+    margin-left: 5px;
+    font-size: 12px;
+  }
+
+  .events {
+    width: 100%;
+    display: block;
+  }
+
+  .feedback {
+    padding: 66px 5px 67px;
+  }
+
+  .results {
+    position: relative;
+    padding: 0;
+  }
+  .results li {
+    padding: 10px 14%;
+    border: 1px solid #3C5377;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    behavior: url(../js/PIE.htc);
+    position: relative;
+  }
+  .results li strong {
+    color: #fff;
+    background: #304366;
+    display: block;
+    margin: -11px;
+    padding: 3px 5px 1px;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    behavior: url(../js/PIE.htc);
+    position: relative;
+    font-size: 10px;
+  }
+  .results li.versus {
+    position: absolute;
+    top: 7px;
+    padding: 10px;
+    right: 50%;
+    z-index: 999;
+    margin: 0 -10px 0 0;
+  }
+
+  .events-container {
+    margin-right: 40px;
+    grid-template-columns: 33% 33% 33%;
+  }
+
+  .team {
+    border: 0;
+    background: transparent;
+    margin: -20px 0 0;
+  }
+  .team img {
+    float: none;
+    display: block;
+    text-align: center;
+    margin: 0 0 5px -18px;
+    left: 50%;
+    position: absolute;
+    top: 0;
+  }
+  .team .data {
+    float: none;
+    text-align: center;
+  }
+  .team .data.right {
+    text-align: center;
+  }
+  .team .data .value {
+    bottom: 0;
+    left: 50%;
+    margin-left: -30px;
+    margin-bottom: -34px;
+    border: 1px solid #7CB1DE;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    behavior: url(../js/PIE.htc);
+    position: relative;
+    position: absolute;
+    font-size: 14px;
+    padding: 2px 15px;
+  }
+  .team .data span {
+    position: absolute;
+    top: 36px;
+    left: 50%;
+    margin-left: -38px;
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=all.css.map */
