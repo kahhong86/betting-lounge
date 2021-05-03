@@ -1,4 +1,4 @@
-const duration = [], data1 = [], data2 = [], listing = document.getElementById('data'),
+const duration = [], data1 = [], data2 = [], fastestDomain = [],listing = document.getElementById('data'),
       site = '', timer = new Date().getTime(); 
 
 const createNode = (element) => {
@@ -15,10 +15,12 @@ function datapull(website){
 
   fetch(website) 
     .then((response) => {      
+      console.log(response);
       if(response.status == 200){
         let timerPage = new Date().getTime();
         timerPage = timerPage - timer;
         duration.push(timerPage);
+        fastestDomain.push(website);
       }
     return response.json();           
   })
@@ -28,17 +30,10 @@ function datapull(website){
       data2.push(runners.rand);
   })
   .catch( error => {
-    console.log('fail');
+     fastestDomain.push(website);
+      duration.push(9999);
   }
 ), {signal: controller.signal }; 
-}
-
-const createPromise = (message, resolveInMs) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(message)
-    }, resolveInMs)
-  })
 }
 
 const domains = [
@@ -70,12 +65,9 @@ for (let i = 0; i < domains.length ; i++){
   
   if( i == domains.length -1){
     setTimeout(() => {
-      
-      
+      // console.log(domains);
       let lowestvalue = Math.min.apply(Math,duration);
       let lowestposition = duration.indexOf(lowestvalue);
-      
-      console.log(lowestposition);
      
       let span = createNode('span'),
           label = createNode('label');
@@ -84,6 +76,9 @@ for (let i = 0; i < domains.length ; i++){
       
       append(listing,label);
       append(listing,span);
+      console.log(fastestDomain);
+      console.log(duration);
+      console.log(fastestDomain[lowestposition]);
     },2000)  
   }
 } 
